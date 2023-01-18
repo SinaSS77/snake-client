@@ -1,0 +1,32 @@
+const net = require("net");
+
+// establishes a connection with the game server
+const connect = function () {
+  const conn = net.createConnection({
+    host: "165.227.47.243",
+    port: 50541,
+  });
+
+  // interpret incoming data as text
+  conn.setEncoding("utf8");
+  
+  conn.on("connect", () => {
+    conn.write("Name: SIN");
+    // setTimeout(() => conn.write("Move: up"), 5000);
+    // conn.write("Move: down"); // - move down one square (unless facing up)
+    // conn.write("Move: left"); // - move left one square (unless facing right)
+    // conn.write("Move: right"); // - move left one square (unless facing left)
+
+  });
+
+  // conn.on("data", (data) => {
+  //   console.log("Server says: ", data);
+  // });
+  
+  
+  return conn;
+};
+console.log("Connecting ...");
+connect();
+
+module.exports = connect;
