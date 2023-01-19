@@ -1,4 +1,3 @@
-// const connect = require("./play");
 let connection;
 
 const handleUserInput = function (key) {
@@ -21,25 +20,7 @@ const handleUserInput = function (key) {
   if (key === "q") {
     connection.write("Say: beep");
   }
-
-
-  // switch (key) {
-  //   case "w":
-  //     connection.write("Move: up");
-  //     break;
-  //   case "w":
-  //     connection.write("Move: up");
-  //     break;
-  //   case "w":
-  //     connection.write("Move: up");
-  //     break;
-  //   case "w":
-  //     connection.write("Move: up");
-  //     break;
-
-  //   default:
-  //     break;
-  // }
+  
 };
 
 const setupInput = (conn) => {
